@@ -2,6 +2,6 @@
 地理院地図VectorをOpenLayersで表示する
 
 ## 参考
-https://openlayers.org/
-https://maps.gsi.go.jp/vector/
+* https://openlayers.org/
+* https://maps.gsi.go.jp/vector/
 
