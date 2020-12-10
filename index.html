@@ -4,19 +4,25 @@
     <meta charset='utf-8' />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/css/ol.css" type="text/css">
     <style>
-      .map {
-        height: 400px;
+      html {
+        height: 100%;
         width: 100%;
-        border: solid;
-        border-color: #AAAAFF;
+      }
+      body {
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+      .map {
+        height: 100%;
+        width: 100%;
       }
     </style>
     <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
     <script src="./style.js"></script>
-    <title>OpenLayers example</title>
+    <title>gsi vector on OpenLayers example</title>
   </head>
   <body>
-    <h2>My Map</h2>
     <div id="map" class="map"></div>
     <script type="text/javascript">
       
@@ -26,24 +32,24 @@
           new ol.layer.VectorTile({
             declutter: true,
             source: new ol.source.VectorTile({
-              attributions: '地理院地図Vector',
+              attributions: '<a href="https://maps.gsi.go.jp/vector/" target="_blank">地理院地図Vector</a>',
               format: new ol.format.MVT({
-                layers: ['road', 'railway', 'waterarea', 'coastline', 'building']
+//                layers: ['road', 'railway', 'waterarea', 'coastline', 'building']
               }),
               url:
                 'https://cyberjapandata.gsi.go.jp/xyz/experimental_bvmap/{z}/{x}/{y}.pbf'
             }),
-            minZoom: 4,
-            maxZoom: 17,
-            renderBuffer: 80,
+            minZoom: 5,
+            maxZoom: 16,
+            renderBuffer: 100,
             style: stylingVectorTile
           })
         ],
         view: new ol.View({
-          center: ol.proj.fromLonLat([135, 35]),
-          zoom: 5,
-          minZoom: 4,
-          maxZoom: 17
+          center: ol.proj.fromLonLat([139.649019, 35.270359]),
+          zoom: 13,
+          minZoom: 5,
+          maxZoom: 16
         })
       });
     </script>
