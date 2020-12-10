@@ -54,10 +54,20 @@ const showIcon = (code) => {
       iconname = "町村役場・政令指定都市の区役所"; break;
     case 3211:
       iconname = "交番"; break;
+    case 3212:
+      iconname = "高等学校・中等教育学校"; break;
     case 3214:
       iconname = "小学校"; break;
     case 3213:
       iconname = "中学校"; break;
+    case 3214:
+      iconname = "小学校"; break;
+    case 3215:
+      iconname = "老人ホーム"; break;
+    case 3216:
+      iconname = "博物館法の登録博物館・博物館相当施設"; break;
+    case 3217:
+      iconname = "図書館"; break;
     case 3218:
       iconname = "郵便局"; break;
     case 3221:
@@ -66,34 +76,68 @@ const showIcon = (code) => {
       iconname = "神社"; break;
     case 3232:
       iconname = "寺院"; break;
+    case 3241:
+      iconname = "警察署"; break;
     case 3242:
       iconname = "消防署"; break;
     case 3243:
       iconname = "病院"; break;
+    case 3244:
+      iconname = "保健所"; break;
     case 4101:
       iconname = "煙突"; break;
+    case 4102:
+      iconname = "風車"; break;
+    case 4103:
+      iconname = "油井・ガス井"; break;
     case 4104:
       iconname = "記念碑"; break;
+    case 4105:
+      iconname = "自然災害伝承碑"; break;
+    case 6301:
+      iconname = "墓地"; break;
     case 6311:
       iconname = "田"; break;
     case 6312:
       iconname = "畑"; break;
+    case 6313:
+      iconname = "茶畑"; break;
     case 6314:
       iconname = "果樹園"; break;
     case 6321:
       iconname = "広葉樹林"; break;
     case 6322:
       iconname = "針葉樹林"; break;
+    case 6323:
+      iconname = "竹林"; break;
+    case 6324:
+      iconname = "ヤシ科樹林"; break;
+    case 6325:
+      iconname = "ハイマツ地"; break;
+    case 6326:
+      iconname = "笹地"; break;
     case 6327:
       iconname = "荒地"; break;
-    case 6341:
+    case 6331:
       iconname = "史跡・名勝・天然記念物"; break;
+    case 6332:
+      iconname = "温泉"; break;
+    case 6341:
+      iconname = "噴火口・噴気口"; break;
     case 6342:
       iconname = "城跡"; break;
+    case 6351:
+      iconname = "採鉱地"; break;
     case 6361:
       iconname = "港湾"; break;
     case 6362:
       iconname = "漁港"; break;
+    case 6371:
+      iconname = "国際空港-20"; break;
+    case 6372:
+      iconname = "自衛隊等の飛行場-20"; break;
+    case 6381:
+      iconname = "自衛隊-20"; break;
     case 7102:
       iconname = "三角点"; break;
     case 7103:
@@ -342,7 +386,8 @@ const stylingVectorTile = (rf, num) => {
       stroke: new ol.style.Stroke({
         color: roadLColor(rf),
         width: roadLWidth(rf),
-        lineDash: roadLDash
+        lineDash: roadLDash,
+        lineCap: 'butt'
       }),
       zIndex: 20000
     }),
@@ -355,7 +400,8 @@ const stylingVectorTile = (rf, num) => {
       stroke: new ol.style.Stroke({
         color: 'rgba(0,151,0,0.5)',
         width: roadLWidth(rf),
-        lineDash: roadLDash
+        lineDash: roadLDash,
+        lineCap: 'butt'
       }),
       zIndex: 20000
     }),
