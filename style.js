@@ -119,11 +119,11 @@ const showIcon = (code) => {
     case 6327:
       iconname = "荒地"; break;
     case 6331:
-      iconname = "史跡・名勝・天然記念物"; break;
-    case 6332:
       iconname = "温泉"; break;
-    case 6341:
+    case 6332:
       iconname = "噴火口・噴気口"; break;
+    case 6341:
+      iconname = "史跡・名勝・天然記念物"; break;
     case 6342:
       iconname = "城跡"; break;
     case 6351:
