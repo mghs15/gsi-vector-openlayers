@@ -24,7 +24,7 @@ const iconStyleOption = (iconname) => {
       src: 'https://maps.gsi.go.jp/vector/sprite/std.png',
       size: [info.width, info.height],
       offset: [info.x, info.y],
-      scale: 0.5
+      scale: (info.y < 770) ? 0.5 : 0.3
     };
     
     return style;
@@ -132,10 +132,18 @@ const showIcon = (code) => {
       iconname = "港湾"; break;
     case 6362:
       iconname = "漁港"; break;
+    case 6367:
+      iconname = "特定重要港-20"; break;
+    case 6368:
+      iconname = "重要港-20"; break;
     case 6371:
       iconname = "国際空港-20"; break;
     case 6372:
       iconname = "自衛隊等の飛行場-20"; break;
+    case 6375:
+      iconname = "国際空港-20"; break;
+    case 6376:
+      iconname = "国際空港以外の拠点空港等-20"; break;
     case 6381:
       iconname = "自衛隊-20"; break;
     case 7102:
@@ -148,6 +156,16 @@ const showIcon = (code) => {
       iconname = "発電所等"; break;
     case 8105:
       iconname = "電波塔"; break;
+    case 51301:
+      iconname = "人口100万人以上-500"; break;
+    case 51302:
+      iconname = "人口50万-100万人未満-500"; break;
+    case 51303:
+      iconname = "人口50万人未満-500"; break;
+    case 56368:
+      iconname = "主要な港-500"; break;
+    case 56376:
+      iconname = "主要な空港-500"; break;
     default:
       iconname = "指示点"; break;
   }
@@ -483,6 +501,7 @@ const stylingVectorTile = (rf, num) => {
     }),
     
     //都市名関係
+    
     new ol.style.Style({
       geometry: (f) => {if(
         f.properties_.layer == "symbol" &&
@@ -504,6 +523,7 @@ const stylingVectorTile = (rf, num) => {
       image: showIcon(rf.properties_.ftCode),
       zIndex: 100004
     }),
+    
     
     //標高関係
     new ol.style.Style({
