@@ -3,7 +3,7 @@
 
 https://mghs15.github.io/gsi-vector-openlayers/
 
-# todo
+### todo
 * Consider the case that road's "lvOrder" prop is not contained in the features (style.js)
 
 ## 参考
