@@ -443,7 +443,7 @@ const stylingVectorTile = (rf, num) => {
         color: 'rgba(100,100,100,1)',
         width: 1.5
       }),
-      zIndex: 1000
+      zIndex: 1000 + 10 + 1
     }),
     //高架
     new ol.style.Style({
