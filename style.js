@@ -176,6 +176,14 @@ const showIcon = (code) => {
 
 //基本的な設定等-----------------------------------------------------------------
 
+const checkProp = (prop, d=0) => {
+  if(prop){
+    return prop;
+  }else{
+    return d; 
+  }
+}
+
 //const roadLWidth = 2;
 const roadLDash = [5,5];
 const roadLWidth = (f) => {
@@ -326,7 +334,7 @@ const stylingVectorTile = (rf, num) => {
         width: 1,
         lineDash: [2,2]
       }),
-      zIndex: 1000 + rf.properties_.lvOrder + 10 - rf.properties_.rdCtg 
+      zIndex: 1000 + checkProp(rf.properties_.lvOrder) + 10 - rf.properties_.rdCtg 
     }),
     
     new ol.style.Style({
@@ -339,7 +347,7 @@ const stylingVectorTile = (rf, num) => {
         color: roadLColor(rf),
         width: roadLWidth(rf)
       }),
-      zIndex: 1000 + rf.properties_.lvOrder + 10 - rf.properties_.rdCtg 
+      zIndex: 1000 + checkProp(rf.properties_.lvOrder) + 10 - rf.properties_.rdCtg 
     }),
     new ol.style.Style({
       geometry: (f) => {if(
@@ -351,7 +359,7 @@ const stylingVectorTile = (rf, num) => {
         color: 'rgba(0,151,0,1)',
         width: roadLWidth(rf)
       }),
-      zIndex: 1000 + rf.properties_.lvOrder + 10
+      zIndex: 1000 + checkProp(rf.properties_.lvOrder) + 10
     }),
     
     //道路高架部--------------------------------------------
@@ -366,7 +374,7 @@ const stylingVectorTile = (rf, num) => {
         color: roadLColor(rf),
         width: roadLWidth(rf)
       }),
-      zIndex: 10000 + rf.properties_.lvOrder + 1
+      zIndex: 10000 + checkProp(rf.properties_.lvOrder) + 1
     }),
     new ol.style.Style({
       geometry: (f) => {if(
@@ -378,7 +386,7 @@ const stylingVectorTile = (rf, num) => {
         color: 'rgba(0,151,0,1)',
         width: roadLWidth(rf)
       }),
-      zIndex: 10000 + rf.properties_.lvOrder + 1
+      zIndex: 10000 + checkProp(rf.properties_.lvOrder) + 1
     }),
     new ol.style.Style({
       //枠線
@@ -391,7 +399,7 @@ const stylingVectorTile = (rf, num) => {
         width: roadLWidth(rf) + 2,
         lineCap: 'butt'
       }),
-      zIndex: 10000 + rf.properties_.lvOrder
+      zIndex: 10000 + checkProp(rf.properties_.lvOrder)
     }),
     
     //道路トンネル部--------------------------------------------
@@ -447,7 +455,7 @@ const stylingVectorTile = (rf, num) => {
         color: 'rgba(100,100,100,1)',
         width: 1.5
       }),
-      zIndex: 10000 + rf.properties_.lvOrder + 1
+      zIndex: 10000 + checkProp(rf.properties_.lvOrder) + 1
     }),
     new ol.style.Style({
       geometry: (f) => {if(
@@ -459,7 +467,7 @@ const stylingVectorTile = (rf, num) => {
         width: 4,
         lineCap: 'butt'
       }),
-      zIndex: 10000 + rf.properties_.lvOrder
+      zIndex: 10000 + checkProp(rf.properties_.lvOrder)
     }),
     //トンネル
     new ol.style.Style({
