@@ -2,9 +2,9 @@
 //Sprite-----------------------------------------------------------------
 const loadJSON = function(path){
   
-  var data = [];
+  let data = "";
   
-  var xhr = new XMLHttpRequest();
+  const xhr = new XMLHttpRequest();
   xhr.open('GET', path, false);
   xhr.send(null);
   
